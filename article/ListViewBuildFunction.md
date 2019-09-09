@@ -108,10 +108,63 @@ class ListViewPageState extends State<ListViewPage> {
 ```
 
 ### 4.ListView.custom 形式
+* 提供了自定义子Widget的能力
 
 
 
+### 5.完整代码
+`完整代码`
 
+```Dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(ListViewApp());
+
+class ListViewApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'ListView',
+      theme: ThemeData.light(),
+      home: ListViewPage(),
+    );
+  }
+}
+
+class ListViewPage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return ListViewPageState();
+  }
+}
+
+class ListViewPageState extends State<ListViewPage> {
+  var entries = ['A', 'B', 'C'];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ListView'),
+      ),
+      body: ListView.separated(
+        itemCount: entries.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text('Entry ${entries[index]}'),
+          );
+        },
+        //分割线样式
+        separatorBuilder: (context, indext) {
+          return Divider(
+            height: 1,
+          );
+        },
+      ),
+    );
+  }
+}
+```
 
 
 
