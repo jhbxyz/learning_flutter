@@ -109,7 +109,12 @@ class ListViewPageState extends State<ListViewPage> {
 }
 ```
 
+`效果`
+
+![](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/livstview_2.jpg)
+
 ### 4.ListView.custom 形式
+
 * 提供了自定义子Widget的能力
 
 
