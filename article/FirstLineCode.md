@@ -3,7 +3,7 @@
 * 详细内容都在注释上
 * 一切皆 Widget
 * StatelessWidget  StateFulWidget 的区分
-* 
+* 一些基础组件的使用
 
 
 
@@ -87,3 +87,6 @@ class MyRaisedButtonState extends State<MyRaisedButton> {
 }
 ```
 
+`效果`
+
+![](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/listview_3.jpg)
