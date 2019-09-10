@@ -90,3 +90,9 @@ class MyRaisedButtonState extends State<MyRaisedButton> {
 `效果`
 
 ![](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/listview_3.jpg)
+
+# 源码地址
+[https://github.com/jhbxyz/flutter_learn_art/blob/master/lib/art_route/day2_first_line_app/first_line/first_line.dart](https://github.com/jhbxyz/flutter_learn_art/blob/master/lib/art_route/day2_first_line_app/first_line/first_line.dart)
+
+# 文章地址
+[https://github.com/jhbxyz/flutter_learn_art/blob/master/article/FirstLineCode.md](https://github.com/jhbxyz/flutter_learn_art/blob/master/article/FirstLineCode.md)
