@@ -111,7 +111,7 @@ class ListViewPageState extends State<ListViewPage> {
 
 `效果`
 
-![](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/livstview_2.jpg)
+![](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/listview_2.png)
 
 ### 4.ListView.custom 形式
 
