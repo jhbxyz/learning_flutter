@@ -37,7 +37,7 @@ class ListViewPageState extends State<ListViewPage> {
           );
         },
         //分割线样式
-        separatorBuilder: (context, indext) {
+        separatorBuilder: (context, index) {
           return Divider(
             height: 1,
           );
