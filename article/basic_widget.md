@@ -24,6 +24,8 @@
   * IconButton
   * FloatActionButton
 
+![image](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/basic_widget.png)
+
 ### 1.StatelessWidget 和 StatefulWidget 的区别
 
 Widget immutable(不可变的)
