@@ -10,6 +10,7 @@ class RandomWordsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Startup Name Generator',
+      theme: ThemeData(primaryColor: Colors.white),
       home: RandomWordsPage(),
     );
   }
@@ -58,6 +59,12 @@ class _RandomWordsPageState extends State<RandomWordsPage> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Startup Name Generator'),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.list),
+              onPressed: _pressSave,
+            )
+          ],
         ),
         body: _buildSuggestions());
   }
@@ -83,5 +90,32 @@ class _RandomWordsPageState extends State<RandomWordsPage> {
         });
       },
     );
+  }
+
+  void _pressSave() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+      var titles = _save.map((pair) {
+        return ListTile(
+          title: Text(
+            pair.asPascalCase,
+            style: _biggerFont,
+          ),
+        );
+      });
+
+      var list = ListTile.divideTiles(context: context, tiles: titles).toList();
+
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Saved Suggestions',
+            style: _biggerFont,
+          ),
+        ),
+        body: ListView(
+          children: list,
+        ),
+      );
+    }));
   }
 }
