@@ -9,7 +9,7 @@ class RandomWordsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MyApp',
+      title: 'Startup Name Generator',
       home: RandomWordsPage(),
     );
   }
@@ -23,8 +23,30 @@ class RandomWordsPage extends StatefulWidget {
 }
 
 class _RandomWordsPageState extends State<RandomWordsPage> {
-  var randomWord = WordPair.random();
-  var wordList = [];
+  final _suggestions = <WordPair>[];
+  final _save = Set<WordPair>();
+  var _biggerFont = TextStyle(fontSize: 18.0, fontStyle: FontStyle.normal);
+
+  Widget _buildSuggestions() {
+    return ListView.builder(
+      itemBuilder: (context, i) {
+        if (i.isOdd) {
+          //如果是奇数
+          return Divider(
+            height: 1.0,
+          );
+        }
+        final index = i ~/ 2;
+
+        if (index >= _suggestions.length) {
+          //如果达到了单词的最未位处
+          _suggestions.addAll(generateWordPairs().take(10));
+        }
+
+        return _buildRow(_suggestions[index]);
+      },
+    );
+  }
 
   @override
   void initState() {
@@ -34,21 +56,32 @@ class _RandomWordsPageState extends State<RandomWordsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('haha'),
+        appBar: AppBar(
+          title: Text('Startup Name Generator'),
+        ),
+        body: _buildSuggestions());
+  }
+
+  Widget _buildRow(WordPair wordPair) {
+    var isSaved = _save.contains(wordPair);
+    return ListTile(
+      title: Text(
+        wordPair.asPascalCase,
+        style: _biggerFont,
       ),
-      body: ListView.separated(
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(wordList[index]),
-            );
-          },
-          separatorBuilder: (context, index) {
-            return Divider(
-              height: 1.0,
-            );
-          },
-          itemCount: wordList.length),
+      trailing: Icon(
+        isSaved ? Icons.favorite : Icons.favorite_border,
+        color: isSaved ? Colors.red : null,
+      ),
+      onTap: () {
+        setState(() {
+          if (isSaved) {
+            _save.remove(wordPair);
+          } else {
+            _save.add(wordPair);
+          }
+        });
+      },
     );
   }
 }
