@@ -2,27 +2,27 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(RandomWordsApp());
 }
 
-class MyApp extends StatelessWidget {
+class RandomWordsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MyApp',
-      home: MyAppPage(),
+      home: RandomWordsPage(),
     );
   }
 }
 
-class MyAppPage extends StatefulWidget {
+class RandomWordsPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _MyAppPageState();
+    return _RandomWordsPageState();
   }
 }
 
-class _MyAppPageState extends State<MyAppPage> {
+class _RandomWordsPageState extends State<RandomWordsPage> {
   var randomWord = WordPair.random();
   var wordList = [];
 
