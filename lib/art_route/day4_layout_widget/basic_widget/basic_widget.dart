@@ -26,6 +26,8 @@ final imageUrl =
     'https://images.unsplash.com/photo-1568114813528-471a736a8fd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60';
 
 class _MyAppPageState extends State<MyAppPage> {
+  var _editController = TextEditingController();
+
   //构建Widget时调用
   @override
   Widget build(BuildContext context) {
@@ -54,6 +56,11 @@ class _MyAppPageState extends State<MyAppPage> {
                   )
                 ],
               ),
+              TextField(
+                controller: _editController,
+                //自动弹起软键盘
+                autofocus: true,
+              ),
               Row(
                 children: <Widget>[
                   FlatButton(
@@ -70,15 +77,19 @@ class _MyAppPageState extends State<MyAppPage> {
                     color: Colors.cyanAccent,
                     elevation: 10,
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(3.0),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Text('我是 FAB'),
-                    elevation: 10,
-                  ),
                 ],
+              ),
+              FloatingActionButton(
+                onPressed: () {},
+                child: Icon(Icons.add),
+                elevation: 10,
+              ),
+              IconButton(
+                icon: Icon(Icons.favorite),
+                color: Colors.green,
+                onPressed: () {
+                  debugPrint('onPressed');
+                },
               )
             ],
           )),
@@ -89,6 +100,7 @@ class _MyAppPageState extends State<MyAppPage> {
   @override
   void initState() {
     super.initState();
+    _editController.addListener(() {});
   }
 
   //state依赖的对象发生变化时调用
@@ -113,5 +125,6 @@ class _MyAppPageState extends State<MyAppPage> {
   @override
   void dispose() {
     super.dispose();
+    _editController.dispose();
   }
 }
