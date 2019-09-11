@@ -152,6 +152,8 @@ class _MyAppPageState extends State<MyAppPage> {
 **contain**
 全图显示，保持原比例。
 
+![contain](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/box_fit_contain.png)
+
 
 
 ​	
