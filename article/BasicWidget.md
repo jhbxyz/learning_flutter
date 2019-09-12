@@ -342,3 +342,12 @@ class _MyAppPageState extends State<MyAppPage> {
 常用组件都在这里啦！按字母排序
 
 [https://flutter.dev/docs/reference/widgets](https://flutter.dev/docs/reference/widgets)
+
+# 源码地址
+
+[https://github.com/jhbxyz/flutter_learn_art/blob/master/lib/art_route/day4_layout_widget/basic_widget/basic_widget.dart](https://github.com/jhbxyz/flutter_learn_art/blob/master/article/BasicWidget.md)
+
+# 文章链接
+
+[https://github.com/jhbxyz/flutter_learn_art/blob/master/article/BasicWidget.md](https://github.com/jhbxyz/flutter_learn_art/blob/master/article/BasicWidget.md)
+
