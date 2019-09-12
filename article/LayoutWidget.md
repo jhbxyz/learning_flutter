@@ -1,4 +1,4 @@
-# Flutter 布局
+# Flutter 布局（有很多基础实用知识点）
 
 ### 0.继承体系图
 
@@ -11,14 +11,14 @@
 * Row：在水平方向上布置子窗口Widget列表（Android 水平方向的线性布局）。
 * Column：在垂直方向上布置子窗口Widge列表（Android 垂直方向的线性布局）。
 
-* Stack
+* Stack：层叠摆放（Android 中的 FrameLayout RelativeLayout）
 * 
 
 ### 1.Container
 
 `效果`
 
-![https://github.com/jhbxyz/flutter_learn_art/blob/master/images/layout_container.jpg]()
+![https://github.com/jhbxyz/flutter_learn_art/blob/master/images/layout_container.png](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/layout_container.png)
 
 `示例`
 
@@ -99,7 +99,7 @@ class MyApp extends StatelessWidget {
 
 `效果`
 
-![https://github.com/jhbxyz/flutter_learn_art/blob/master/images/layout_center.jpg](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/layout_center.jpg)
+![https://github.com/jhbxyz/flutter_learn_art/blob/master/images/layout_center.jpg](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/layout_center.png)
 
 `示例`
 
@@ -253,5 +253,58 @@ class _MyRaisedButtonState extends State<MyRaisedButton> {
 }
 ```
 
+### 6.Stack
 
+* positioned：包裹在组件Positioned中的组件，通过Positioned属性灵活定位
+* non-positioned：没有包裹在Positioned中，通过父Widget Stack 的属性来控制布局
+
+
+
+```java
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Layout Widget',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Layout Widget'),
+        ),
+        body: Container(
+          margin: EdgeInsets.all(20),
+          width: 500,
+          height: 300,
+          color: Colors.amber,
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                top: 100,
+                left: 200,
+                child: Container(
+                  alignment: Alignment.center,
+                  width: 80,
+                  height: 30,
+                  color: Colors.redAccent,
+                  child: Text('Positioned'),
+                ),
+              ),
+              Container(
+                alignment: Alignment.center,
+                width: 120,
+                height: 30,
+                color: Colors.lightBlue,
+                child: Text('Non Positioned'),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
 

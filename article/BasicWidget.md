@@ -147,7 +147,7 @@ class _MyAppPageState extends State<MyAppPage> {
 - Image.memory(bytes);
 - Image.network(src);
 
-**fit 参数** 子类 BoxFit
+##### 3.1.**fit 参数** 子类 BoxFit
 
 [BoxFit 身上有几个常量](https://api.flutter.dev/flutter/painting/BoxFit-class.html)
 
@@ -186,6 +186,8 @@ class _MyAppPageState extends State<MyAppPage> {
 
 ![scaleDown](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/box_fit_scaleDown.png)
 
+##### 3.2.Image.network
+
 `示例`
 
 ```java
@@ -221,6 +223,58 @@ class _MyAppPageState extends State<MyAppPage> {
                   )
                 ],
               ),
+```
+
+##### 3.3.Image.asset
+
+* 创建包名assets 子包名 images 把图片（image_car.jpeg）放进去
+
+* 在 pubspec.yaml 文件 配置 assets:图片路径
+
+* ```yaml
+  flutter:
+  
+    # The following line ensures that the Material Icons font is
+    # included with your application, so that you can use the icons in
+    # the material Icons class.
+    uses-material-design: true
+  
+    # To add assets to your application, add an assets section, like this:
+    # assets:
+    #  - images/a_dot_burr.jpeg
+    #  - images/a_dot_ham.jpeg
+    assets:
+       - assets/images/image_car.jpeg
+  ```
+
+* 调用 Image.asset()方法显示本地图片
+
+```java
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Layout Demo 1',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Layout Demo 1'),
+        ),
+        body: Image.asset(
+          'assets/images/image_car.jpeg',
+          width: 200,
+          height: 100,
+          fit: BoxFit.fill,
+        ),
+      ),
+    );
+  }
+}
 ```
 
 
