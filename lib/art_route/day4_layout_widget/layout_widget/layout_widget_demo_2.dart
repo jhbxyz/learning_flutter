@@ -35,7 +35,10 @@ class MyApp extends StatelessWidget {
 List<BuildingBean> getBeansData() {
   var list = List<BuildingBean>();
   for (var i = 0; i < 10; i++) {
-    list.add(BuildingBean(BuildingType.theater, "Titlie$i", '$i'));
+    list.add(BuildingBean(
+        i % 2 == 0 ? BuildingType.theater : BuildingType.restaurant,
+        "Titlie$i",
+        '$i'));
   }
   return list;
 }
