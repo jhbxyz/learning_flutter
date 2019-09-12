@@ -1,5 +1,9 @@
 # Flutter 布局
 
+### 0.继承体系图
+
+![](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/layout_xmind.png)
+
 * Container ：设置Widget的背景、尺寸、定位、margin等（ Android 的 ViewGrope）可以看成是 Padding、Center 的封装。
 * Padding：加 padding
 * Center：让 child 居中
@@ -14,7 +18,7 @@
 
 `效果`
 
-
+![https://github.com/jhbxyz/flutter_learn_art/blob/master/images/layout_container.jpg]()
 
 `示例`
 
@@ -95,7 +99,7 @@ class MyApp extends StatelessWidget {
 
 `效果`
 
-
+![https://github.com/jhbxyz/flutter_learn_art/blob/master/images/layout_center.jpg](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/layout_center.jpg)
 
 `示例`
 
@@ -157,7 +161,7 @@ class MyApp extends StatelessWidget {
 
 `效果`
 
-
+![](https://github.com/jhbxyz/flutter_learn_art/blob/master/images/layout_expand.jpg)
 
 `示例`
 
