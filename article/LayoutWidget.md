@@ -442,3 +442,13 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+
+
+# 9.源码地址
+
+[https://github.com/jhbxyz/flutter_learn_art/tree/master/lib/art_route/day4_layout_widget/layout_widget](https://github.com/jhbxyz/flutter_learn_art/tree/master/lib/art_route/day4_layout_widget/layout_widget)
+
+# 10.文章地址
+
+[https://github.com/jhbxyz/flutter_learn_art/blob/master/article/LayoutWidget.md](https://github.com/jhbxyz/flutter_learn_art/blob/master/article/LayoutWidget.md)
