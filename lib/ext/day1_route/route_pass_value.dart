@@ -19,14 +19,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//封装模型
-class PassValueBean {
-  //传递的 value
-  final String content;
-
-  PassValueBean(this.content);
-}
-
 class FirstPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -91,6 +83,7 @@ class FirstPageState extends State<FirstPage> {
 
   var secondValue = '第二个页面传递的值是: ';
 
+  // 新建路由传值
   void goNextPage(
       TextEditingController _editController, BuildContext context) async {
     var routeSettings = RouteSettings();
@@ -113,6 +106,11 @@ class FirstPageState extends State<FirstPage> {
       secondValue = secondValue + "$valueFromSecondPage";
     });
   }
+}
+
+// 注册路由传值
+void goNextPage2(BuildContext context) {
+  Navigator.pushNamed(context, '/Second', arguments: '传递的值');
 }
 
 class SecondPage extends StatelessWidget {
